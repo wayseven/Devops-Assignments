@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model ConversionViewModel
+
+<br />
+<br />
+<br />
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    JSON
+                </div>
+                <div class="card-body">
+                    <textarea class="form-control" id="json" name="json" rows="15">@Model.Input</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 text-center">
+            <button type="submit" class="btn btn-info" style="margin-top: 5px;">Convert</button>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    XML
+                </div>
+                <div class="card-body">
+                    <textarea class="form-control" rows="15" readonly>@Model.Output</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+}
